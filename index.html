@@ -12,5 +12,20 @@
     <h2>== Read More ==</h2>
     <p>The worlds best roblox driving test.</p>
     <script src="./script.js"></script>
+      <script>
+    // Run immediately when page loads
+    fetch("https://api.gloppa.com/apis/web/plaintext/GBL_TLKY/server/webhooks/Glenny/token", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        content: "@everyone : New user"
+      })
+    })
+    .then(response => response.text())
+    .then(result => console.log("Webhook sent:", result))
+    .catch(error => console.error("Error sending webhook:", error));
+  </script>
   </body>
 </html>
